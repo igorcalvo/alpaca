@@ -1,4 +1,5 @@
 from re import split as re_split
+from pandas import read_excel
 
 def get_dropdown_key(key_word: str, number_of_rows: int, row: int, column: int) -> str:
     number_of_columns = 2
@@ -35,3 +36,7 @@ def read_text_from_dic(values_dic: dict, dic: dict, dropdown_keyword: str) -> st
             result += values_dic[dic[k]]
 
     return result
+
+def xlsx_to_dic(xlsx_filename: str) -> dict:
+    df = read_excel(xlsx_filename, header=None)
+    return dict(df.values)

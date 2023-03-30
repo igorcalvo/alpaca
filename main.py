@@ -1,21 +1,18 @@
 from ui import MainWindow
 from pyperclip import copy as copy_to_clipboard
-from logic import read_text_from_dic
+from logic import read_text_from_dic, xlsx_to_dic
 from PySimpleGUI import WIN_CLOSED
 
 max_rows = 5
-data = {
-    "A": "aaaaa",
-    "B": "bbbbb",
-    "C": "ccccc",
-    "D": "ddddd",
-}
+xlsx_filename = 'assets/dados.xlsx'
+
 generate_text = "Gerar texto"
 clean_text = "Limpar"
 copy_text = "Copiar"
 dropdown_keyword = "dropdown"
 textarea_key = "textarea"
 
+data = xlsx_to_dic(xlsx_filename)
 text = ""
 
 window = MainWindow(generate_text, clean_text, copy_text, max_rows, list(data.keys()),
@@ -41,6 +38,4 @@ while True:
 #     print('PyCharm')
 
 # TODO
-# read csv for data
-# py2exe with csv?
 # consult about theme

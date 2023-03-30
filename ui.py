@@ -88,6 +88,6 @@ def MainWindow(generate_text: str, clean_text: str, copy_text: str, max_rows: in
     return sg.Window(title="Alpaca",
                      layout=layout,
                      use_custom_titlebar=True,
-                     titlebar_icon="alpaca.png",
+                     titlebar_icon="assets/alpaca.png",
                      size=(500, 500),
                      element_justification='c')
